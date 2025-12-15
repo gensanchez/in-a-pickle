@@ -1,11 +1,29 @@
 ---
-import Welcome from '../components/Welcome.astro';
+// Página Principal (Home)
+// Esta es la landing page principal - por ahora solo con Layout
+// Las siguientes fases agregarán Hero, Pricing Grid, etc.
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+  <!-- Placeholder temporal para Fase 1 -->
+  <section class="section bg-gradient-to-b from-cream to-white">
+    <div class="container-custom text-center py-20">
+      <h1 class="text-display-md text-primary mb-6 animate-fade-in">
+        Welcome to In A Pickle
+      </h1>
+      <p class="text-xl text-dark-600 max-w-2xl mx-auto animate-fade-in">
+        Fase 1 completada: Layout, Header y Footer funcionando correctamente.
+      </p>
+      <p class="text-lg text-dark-500 mt-4 animate-fade-in">
+        Las siguientes fases agregarán Hero Section, Pricing Grid y más contenido.
+      </p>
+      
+      <!-- Botón de prueba -->
+      <div class="mt-8 flex justify-center gap-4 animate-fade-in">
+        <a href="#" class="btn-primary">Book a Court</a>
+        <a href="#" class="btn-secondary">View Memberships</a>
+      </div>
+    </div>
+  </section>
 </Layout>

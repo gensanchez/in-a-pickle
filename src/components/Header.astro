@@ -1,0 +1,102 @@
+---
+// Header/Navbar Component
+// Navbar sticky con logo, navegación y CTA principal
+---
+
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+  <nav class="container-custom py-4">
+    <div class="flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="/" class="flex items-center space-x-3 group">
+        <!-- Icono de Pickleball (SVG inline) -->
+        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary flex items-center justify-center group-hover:bg-primary-700 transition-colors">
+          <svg class="w-6 h-6 md:w-7 md:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <circle cx="12" cy="12" r="10" stroke-width="2"/>
+            <circle cx="12" cy="12" r="2" fill="currentColor"/>
+            <circle cx="8" cy="8" r="1.5" fill="currentColor"/>
+            <circle cx="16" cy="8" r="1.5" fill="currentColor"/>
+            <circle cx="8" cy="16" r="1.5" fill="currentColor"/>
+            <circle cx="16" cy="16" r="1.5" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-lg md:text-xl font-display font-bold text-primary leading-tight">IN A PICKLE</span>
+          <span class="text-xs md:text-sm text-secondary-900 font-medium -mt-0.5">PICKLEBALL</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex items-center space-x-8">
+        <a href="#pricing" class="text-dark-700 hover:text-primary font-medium transition-colors">Pricing</a>
+        <a href="#memberships" class="text-dark-700 hover:text-primary font-medium transition-colors">Memberships</a>
+        <a href="#why-us" class="text-dark-700 hover:text-primary font-medium transition-colors">Why Us</a>
+        <a href="#contact" class="text-dark-700 hover:text-primary font-medium transition-colors">Contact</a>
+      </div>
+
+      <!-- CTA Button (Desktop & Mobile) -->
+      <div class="flex items-center space-x-4">
+        <a 
+          href="https://example.com/book" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="btn-primary text-sm md:text-base"
+        >
+          Book a Court
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button 
+          id="mobile-menu-button"
+          class="lg:hidden p-2 text-dark-700 hover:text-primary transition-colors"
+          aria-label="Toggle menu"
+        >
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div 
+      id="mobile-menu" 
+      class="lg:hidden hidden pt-4 pb-2 border-t border-primary-100 mt-4"
+    >
+      <div class="flex flex-col space-y-3">
+        <a href="#pricing" class="text-dark-700 hover:text-primary font-medium transition-colors py-2">Pricing</a>
+        <a href="#memberships" class="text-dark-700 hover:text-primary font-medium transition-colors py-2">Memberships</a>
+        <a href="#why-us" class="text-dark-700 hover:text-primary font-medium transition-colors py-2">Why Us</a>
+        <a href="#contact" class="text-dark-700 hover:text-primary font-medium transition-colors py-2">Contact</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  // Toggle mobile menu
+  const menuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Close mobile menu when clicking on a link
+  const mobileLinks = mobileMenu?.querySelectorAll('a');
+  mobileLinks?.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+    });
+  });
+
+  // Close mobile menu when scrolling
+  let lastScroll = 0;
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    if (currentScroll > lastScroll && currentScroll > 100) {
+      mobileMenu?.classList.add('hidden');
+    }
+    lastScroll = currentScroll;
+  });
+</script>
