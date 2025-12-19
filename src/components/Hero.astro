@@ -1,0 +1,131 @@
+---
+// Hero Section - Logo e imagen arriba, botones y features abajo centrados
+import Button from './Button.astro';
+import { Image } from 'astro:assets';
+import logo from '../assets/in-a-pickle-logo.png';
+---
+
+<section class="relative bg-cream overflow-hidden">
+  <div class="container-custom relative z-10">
+    <div class="py-12 md:py-16 lg:py-20">
+      
+      <!-- Sección superior: Logo + Texto (lado a lado) -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-2 md:gap-6 lg:gap-12 items-center mb-12">
+        
+        <!-- Columna Izquierda: Logo -->
+        <div class="flex justify-center lg:justify-end animate-fade-in">
+          <div class="w-72 md:w-80 lg:w-96">
+            <Image 
+              src={logo} 
+              alt="In A Pickle Pickleball Logo" 
+              class="w-full h-auto object-contain"
+              loading="eager"
+              quality={100}
+            />
+          </div>
+        </div>
+
+        <!-- Columna Derecha: Texto (cada línea en 1 sola línea) -->
+        <div class="text-center lg:text-left animate-slide-up space-y-2">
+          <h1 class="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-dark whitespace-nowrap">
+            Yes, it's indoors.
+          </h1>
+          <h1 class="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-dark whitespace-nowrap">
+            Yes, it's private.
+          </h1>
+          <h1 class="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-primary">
+  Yes, it's the only one<br/>
+  in North Providence.
+</h1>
+          
+         <p class="text-base md:text-lg text-dark-700 pt-2 leading-relaxed">
+  Your time. Your friends. Your court.<br/>
+</p>
+        </div>
+      </div>
+
+      <!-- Botones CTA - Centrados debajo -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-slide-up">
+        <Button 
+          href="https://example.com/book" 
+          variant="primary" 
+          size="lg"
+          external={true}
+          class="w-full sm:w-auto"
+        >
+          BOOK A COURT
+        </Button>
+        
+        <Button 
+          href="#memberships" 
+          variant="secondary" 
+          size="lg"
+          class="w-full sm:w-auto"
+        >
+          BECOME A MEMBER
+        </Button>
+      </div>
+
+      <!-- WHY IN A PICKLE? Section - Centrado debajo -->
+      <div class="text-center animate-fade-in">
+        <h3 class="text-2xl md:text-3xl font-display font-bold text-dark mb-8">
+          WHY IN A PICKLE?
+        </h3>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          <!-- Feature 1 -->
+          <div class="flex flex-col items-center">
+            <div class="flex justify-center mb-3">
+              <svg class="w-12 h-12 md:w-16 md:h-16 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+              </svg>
+            </div>
+            <p class="text-xs md:text-sm font-semibold text-dark leading-tight">
+              Only Indoor Court<br/>in North Providence
+            </p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="flex flex-col items-center">
+            <div class="flex justify-center mb-3">
+              <svg class="w-12 h-12 md:w-16 md:h-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                <circle cx="12" cy="12" r="3" stroke-width="2"/>
+                <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke-width="2"/>
+              </svg>
+            </div>
+            <p class="text-xs md:text-sm font-semibold text-dark leading-tight">
+              One Court<br/>No Crowds
+            </p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="flex flex-col items-center">
+            <div class="flex justify-center mb-3">
+              <svg class="w-12 h-12 md:w-16 md:h-16 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 18c-4.02-.98-7-5.03-7-9V8.3l7-3.11 7 3.11V11c0 3.97-2.98 8.02-7 9z"/>
+                <path d="M10 17l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+              </svg>
+            </div>
+            <p class="text-xs md:text-sm font-semibold text-dark leading-tight">
+              Walk in or<br/>Become a Member
+            </p>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="flex flex-col items-center">
+            <div class="flex justify-center mb-3">
+              <svg class="w-12 h-12 md:w-16 md:h-16 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+            </div>
+            <p class="text-xs md:text-sm font-semibold text-dark leading-tight">
+              Small, Safe,<br/>Local
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
