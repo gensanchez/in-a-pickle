@@ -1,26 +1,26 @@
 ---
-// Página Principal (Home)
+// Página Principal (Home) - VERSIÓN FINAL COMPLETA
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import Pricing from '../components/Pricing.astro';
+import WhyChooseUs from '../components/WhyChooseUs.astro';
+import LocationInfo from '../components/LocationInfo.astro';
+import FinalCTA from '../components/FinalCTA.astro';
 ---
 
 <Layout>
-  <!-- Hero Section -->
+  <!-- Hero Section (Fase 2) -->
   <Hero />
 
-  <!-- Pricing Section -->
+  <!-- Pricing Section (Fase 3) -->
   <Pricing />
 
-  <!-- Placeholder para Fase 4 -->
-  <section class="section bg-cream">
-    <div class="container-custom text-center">
-      <h2 class="section-title">
-        Fase 3 completada ✅
-      </h2>
-      <p class="section-subtitle mx-auto">
-        Pricing Grid implementado. La Fase 4 agregará "Why Us?" con más detalle y optimizaciones finales.
-      </p>
-    </div>
-  </section>
+  <!-- Why Choose Us Section (Fase 4) -->
+  <WhyChooseUs />
+
+  <!-- Location & Hours Section (Fase 4) -->
+  <LocationInfo />
+
+  <!-- Final CTA Section (Fase 4) -->
+  <FinalCTA />
 </Layout>
