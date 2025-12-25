@@ -1,5 +1,5 @@
 ---
-// Pricing Section - Grid de opciones de precios
+// Pricing Section - Grid de opciones de precios (ACTUALIZADO con info completa)
 import PricingCard from './PricingCard.astro';
 import Button from './Button.astro';
 ---
@@ -22,25 +22,40 @@ import Button from './Button.astro';
       
       <!-- Card 1: Hourly Play -->
       <PricingCard title="HOURLY PLAY" icon="clock">
-        <div class="text-center space-y-3">
-          <div class="border-b border-primary-100 pb-3">
-            <p class="text-sm text-dark-600 font-semibold">Non-Member Weekdays</p>
-            <p class="text-3xl font-bold text-primary">$60<span class="text-lg text-dark-500">/hr</span></p>
-          </div>
+        <div class="text-center space-y-4">
           
-          <div class="border-b border-primary-100 pb-3">
-            <p class="text-sm text-dark-600 font-semibold">Non-Member Weekends</p>
-            <p class="text-3xl font-bold text-primary">$65<span class="text-lg text-dark-500">/hr</span></p>
+          <!-- Members Section -->
+          <div class="mb-6">
+            <h4 class="text-lg font-bold text-primary mb-3 border-b-2 border-primary pb-2">Members</h4>
+            
+            <div class="space-y-3">
+              <div class="bg-cream-100 rounded-lg p-3">
+                <p class="text-sm text-dark-600 font-semibold">Standard</p>
+                <p class="text-3xl font-bold text-primary">$50<span class="text-lg text-dark-500">/hr</span></p>
+              </div>
+              
+              <div class="bg-accent-50 rounded-lg p-3 border border-accent">
+                <p class="text-sm text-dark-600 font-semibold">Premium</p>
+                <p class="text-3xl font-bold text-accent">$45<span class="text-lg text-dark-500">/hr</span></p>
+              </div>
+            </div>
           </div>
-          
-          <div class="border-b border-primary-100 pb-3">
-            <p class="text-sm text-dark-600 font-semibold">Standard Member</p>
-            <p class="text-3xl font-bold text-secondary-900">$50<span class="text-lg text-dark-500">/hr</span></p>
-          </div>
-          
-          <div class="pb-2">
-            <p class="text-sm text-dark-600 font-semibold">Premium Member</p>
-            <p class="text-3xl font-bold text-accent">$45<span class="text-lg text-dark-500">/hr</span></p>
+
+          <!-- Non-Members Section -->
+          <div>
+            <h4 class="text-lg font-bold text-dark mb-3 border-b-2 border-dark-300 pb-2">Non-Members</h4>
+            
+            <div class="space-y-3">
+              <div class="border-b border-primary-100 pb-3">
+                <p class="text-sm text-dark-600 font-semibold">Weekdays</p>
+                <p class="text-3xl font-bold text-primary">$60<span class="text-lg text-dark-500">/hr</span></p>
+              </div>
+              
+              <div>
+                <p class="text-sm text-dark-600 font-semibold">Weekends</p>
+                <p class="text-3xl font-bold text-primary">$65<span class="text-lg text-dark-500">/hr</span></p>
+              </div>
+            </div>
           </div>
         </div>
         
@@ -60,19 +75,60 @@ import Button from './Button.astro';
       <!-- Card 2: Memberships -->
       <PricingCard title="MEMBERSHIPS" icon="star" featured={true}>
         <div class="text-center">
-          <p class="text-sm text-dark-600 mb-4">2 × 60-minute sessions per week</p>
           
-          <div class="space-y-4">
-            <div class="bg-cream-100 rounded-lg p-4">
-              <p class="text-lg font-bold text-dark mb-1">Standard</p>
-              <p class="text-4xl font-bold text-primary">$99</p>
-              <p class="text-sm text-dark-500">per year</p>
-            </div>
+          <!-- Standard Membership -->
+          <div class="bg-cream-100 rounded-lg p-4 mb-4">
+            <p class="text-xl font-bold text-dark mb-2">Standard</p>
+            <p class="text-4xl font-bold text-primary mb-1">$99</p>
+            <p class="text-sm text-dark-500 mb-3">per year</p>
             
-            <div class="bg-accent-50 rounded-lg p-4 border-2 border-accent">
-              <p class="text-lg font-bold text-dark mb-1">Premium</p>
-              <p class="text-4xl font-bold text-accent">$199</p>
-              <p class="text-sm text-dark-500">per year</p>
+            <div class="text-left space-y-2 text-sm text-dark-700">
+              <div class="flex items-start">
+                <svg class="w-4 h-4 text-primary mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>$10 off hourly bookings</span>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-4 h-4 text-primary mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Save My Play: $3/session</span>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-4 h-4 text-primary mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>1 free 1 hour credit per year</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Premium Membership -->
+          <div class="bg-accent-50 rounded-lg p-4 border-2 border-accent">
+            <p class="text-xl font-bold text-dark mb-2">Premium</p>
+            <p class="text-4xl font-bold text-accent mb-1">$199</p>
+            <p class="text-sm text-dark-500 mb-3">per year</p>
+            
+            <div class="text-left space-y-2 text-sm text-dark-700">
+              <div class="flex items-start">
+                <svg class="w-4 h-4 text-accent mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>$10-$15 off hourly bookings</span>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-4 h-4 text-accent mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span><strong>Save My Play included</strong></span>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-4 h-4 text-accent mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>2 free 1 hour credits per year</span>
+              </div>
             </div>
           </div>
         </div>
@@ -89,25 +145,32 @@ import Button from './Button.astro';
         </div>
       </PricingCard>
 
-      <!-- Card 3: Packs -->
-      <PricingCard title="PACKS" icon="package">
-        <div class="text-center space-y-3">
-          <div class="border-b border-primary-100 pb-3">
-            <p class="text-lg font-semibold text-dark mb-1">5-Pack</p>
-            <p class="text-3xl font-bold text-primary">$275</p>
-            <p class="text-xs text-dark-500">$55 per session</p>
-          </div>
+      <!-- Card 3: Session Packs -->
+      <PricingCard title="SESSION PACKS" icon="package">
+        <div class="text-center">
+          <p class="text-sm text-dark-600 mb-4 leading-relaxed">
+            Pre-purchase court time at a discounted rate without committing to a membership.
+          </p>
           
-          <div class="border-b border-primary-100 pb-3">
-            <p class="text-lg font-semibold text-dark mb-1">10-Pack</p>
-            <p class="text-3xl font-bold text-primary">$520</p>
-            <p class="text-xs text-dark-500">$52 per session</p>
-          </div>
-          
-          <div class="pb-2">
-            <p class="text-lg font-semibold text-dark mb-1">15-Pack</p>
-            <p class="text-3xl font-bold text-primary">$750</p>
-            <p class="text-xs text-dark-500">$50 per session</p>
+          <div class="space-y-3">
+            <div class="bg-cream-100 rounded-lg p-4">
+              <p class="text-lg font-semibold text-dark mb-1">5-Pack</p>
+              <p class="text-3xl font-bold text-primary mb-1">$275</p>
+              <p class="text-xs text-dark-500">$55 per session</p>
+            </div>
+            
+            <div class="bg-cream-100 rounded-lg p-4">
+              <p class="text-lg font-semibold text-dark mb-1">10-Pack</p>
+              <p class="text-3xl font-bold text-primary mb-1">$520</p>
+              <p class="text-xs text-dark-500">$52 per session</p>
+            </div>
+            
+            <div class="bg-cream-100 rounded-lg p-4 border-2 border-primary">
+              <p class="text-lg font-semibold text-dark mb-1">15-Pack</p>
+              <p class="text-3xl font-bold text-primary mb-1">$750</p>
+              <p class="text-xs text-dark-500">$50 per session</p>
+              <p class="text-xs text-accent font-semibold mt-1">Best Value!</p>
+            </div>
           </div>
         </div>
         
@@ -124,26 +187,61 @@ import Button from './Button.astro';
         </div>
       </PricingCard>
 
-      <!-- Card 4: Corporate -->
+      <!-- Card 4: Corporate Memberships -->
       <PricingCard title="CORPORATE" icon="briefcase">
         <div class="text-center">
-          <p class="text-sm text-dark-600 mb-4">Yearly Corporate Membership</p>
+          <p class="text-sm text-dark-600 mb-4 font-semibold">Yearly Corporate Membership</p>
           
-          <div class="space-y-3">
-            <div class="bg-amber-50 rounded-lg p-3 border border-amber-200">
-              <p class="text-base font-bold text-dark">Bronze</p>
-              <p class="text-2xl font-bold text-amber-600">$999</p>
+          <div class="space-y-3 text-left">
+            
+            <!-- Bronze -->
+            <div class="bg-amber-50 rounded-lg p-3 border border-amber-300">
+              <div class="flex justify-between items-center mb-2">
+                <p class="text-base font-bold text-dark">Bronze</p>
+                <p class="text-xl font-bold text-amber-700">$999</p>
+              </div>
+              <p class="text-xs text-dark-600 mb-2 italic">For small teams</p>
+              <ul class="text-xs text-dark-700 space-y-1">
+                <li>• 20 annual credits</li>
+                <li>• Up to 8 users</li>
+                <li>• Off-peak hours only</li>
+                <li>• Save My Play: $3/session</li>
+                <li>• Extra credits: $50 each</li>
+              </ul>
             </div>
             
-            <div class="bg-gray-50 rounded-lg p-3 border border-gray-300">
-              <p class="text-base font-bold text-dark">Silver</p>
-              <p class="text-2xl font-bold text-gray-600">$1,899</p>
+            <!-- Silver -->
+            <div class="bg-gray-50 rounded-lg p-3 border-2 border-gray-400">
+              <div class="flex justify-between items-center mb-2">
+                <p class="text-base font-bold text-dark">Silver</p>
+                <p class="text-xl font-bold text-gray-700">$1,899</p>
+              </div>
+              <p class="text-xs text-dark-600 mb-2 italic">For mid-sized companies</p>
+              <ul class="text-xs text-dark-700 space-y-1">
+                <li>• 50 annual credits</li>
+                <li>• Up to 20 users</li>
+                <li>• All automated hours</li>
+                <li>• <strong>Save My Play included</strong></li>
+                <li>• Extra credits: $48 each</li>
+              </ul>
             </div>
             
+            <!-- Gold -->
             <div class="bg-accent-50 rounded-lg p-3 border-2 border-accent">
-              <p class="text-base font-bold text-dark">Gold</p>
-              <p class="text-2xl font-bold text-accent">$3,999</p>
+              <div class="flex justify-between items-center mb-2">
+                <p class="text-base font-bold text-dark">Gold</p>
+                <p class="text-xl font-bold text-accent">$3,999</p>
+              </div>
+              <p class="text-xs text-dark-600 mb-2 italic">For larger organizations</p>
+              <ul class="text-xs text-dark-700 space-y-1">
+                <li>• 120 annual credits</li>
+                <li>• Up to 50 users</li>
+                <li>• All staffed + automated hours</li>
+                <li>• <strong>Save My Play included</strong></li>
+                <li>• Extra credits: $45 each</li>
+              </ul>
             </div>
+            
           </div>
         </div>
         
