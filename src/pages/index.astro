@@ -1,26 +1,18 @@
 ---
-// Página Principal (Home) - VERSIÓN FINAL
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import Pricing from '../components/Pricing.astro';
-import WhyChooseUs from '../components/WhyChooseUs.astro';
-import LocationInfo from '../components/LocationInfo.astro';
-import FinalCTA from '../components/FinalCTA.astro';
+// Página Principal (Home) - Hero + Mini Features + CTA
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import HomeFeatures from "../components/HomeFeatures.astro";
+import FinalCTA from "../components/FinalCTA.astro";
 ---
 
 <Layout>
-  <!-- Hero Section (Fase 2) -->
+  <!-- Hero Section -->
   <Hero />
 
-  <!-- Pricing Section (Fase 3) -->
-  <Pricing />
+  <!-- Mini Features Summary -->
+  <HomeFeatures />
 
-  <!-- Why Choose Us Section (Fase 4) -->
-  <WhyChooseUs />
-
-  <!-- Location & Hours Section (Fase 4) -->
-  <LocationInfo />
-
-  <!-- Final CTA Section (Fase 4) -->
+  <!-- Final CTA -->
   <FinalCTA />
 </Layout>
